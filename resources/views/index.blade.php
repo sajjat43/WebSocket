@@ -17,8 +17,8 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Student Name</th>
-                    <th scope="col">Student ID</th>
-                    <th scope="col">Section</th>
+                    <th scope="col">Student Email</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Action</th>
 
                 </tr>
@@ -29,8 +29,8 @@
                 <tr>
                     <td scope="row">{{ $data->id}}</td>
                     <td scope="row">{{ $data->student_name}}</td>
-                    <td scope="row">{{ $data->student_id}}</td>
-                    <td scope="row">{{ $data->section}}</td>
+                    <td scope="row">{{ $data->student_email}}</td>
+                    <td scope="row">{{ $data->student_address}}</td>
 
 
                     <td>
@@ -72,15 +72,16 @@
                             placeholder="Enter your student name">
                     </div>
                     <div class="input-group m-2">
-                        <label for="" class="input-group-text">Student Id</label>
-                        <input type="text" class="form-control" id="student_id" name="student_id"
-                            placeholder="Enter your student id">
-                    </div>
-                    <div class="input-group m-2">
-                        <label for="" class="input-group-text">Section</label>
-                        <input type="text" class="form-control" id="section" name="section"
+                        <label for="" class="input-group-text">Email</label>
+                        <input type="text" class="form-control" id="student_email" name="student_email"
                             placeholder="Enter your section ">
                     </div>
+                    <div class="input-group m-2">
+                        <label for="" class="input-group-text">Student Address</label>
+                        <input type="text" class="form-control" id="student_address" name="student_address"
+                            placeholder="Enter your address">
+                    </div>
+                    
 
 
 

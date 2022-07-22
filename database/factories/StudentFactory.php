@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class StudentFactory extends Factory
 {
@@ -15,8 +16,8 @@ class StudentFactory extends Factory
     {
         return [
             'student_name'=>$this->faker->name,
-            'student_id'=>$this->faker->numerify('########'),
-            'section'=>$this->faker->randomElements(['a', 'b', 'c', 'd', 'e']),
+            'student_email'=>$this->faker->unique()->safeEmail(),
+            'student_address'=>$this->faker->address,
         ];
     }
 }

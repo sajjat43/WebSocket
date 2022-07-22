@@ -15,8 +15,8 @@ class StudentController extends Controller
     public function studentStore(Request $request){
         Student::create([
             'student_name' => $request->student_name,
-            'student_id' => $request->student_id,
-            'section'=> $request->section,
+            'student_email' => $request->student_email,
+            'student_address'=> $request->student_address,
            
         ]);
         return redirect()->back();
