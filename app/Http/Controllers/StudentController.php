@@ -33,7 +33,7 @@ class StudentController extends Controller
             'student_address'=> $request->student_address,
            
         ]);
-        return redirect()->back();
+        return redirect()->route('student.index');
     }
 
     public function studentDelete($id){
