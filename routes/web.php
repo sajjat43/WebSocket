@@ -26,6 +26,9 @@ Route::group(['middleware'=>'verified'],function(){
 
     Route::get('/student',[StudentController::class,'studentIndex'])->name('student.index');
     Route::post('/student/store',[StudentController::class,'studentStore'])->name('student.store');
+    Route::get('/student/updateForm/{id}',[StudentController::class,'studentUpdateForm'])->name('student.updateForm');
+    Route::post('/student/update/{id}',[StudentController::class,'studentUpdate'])->name('student.update');
+    Route::get('/student/delete/{id}',[StudentController::class,'studentDelete'])->name('student.delete');
     
     
 });

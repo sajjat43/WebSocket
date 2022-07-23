@@ -34,15 +34,11 @@
 
 
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalupdate">
+                        <a type="button" href="{{route('student.updateForm',$data->id)}}" class="btn btn-primary">
                             <i class="fa-solid fa-pen-to-square"></i>update
-                        </button>
-                        {{-- <a type="button" class="btn btn-success" href=""><i class="fa-solid fa-eye"></i></a> --}}
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModaldelete">
-                            <i class="fa-solid fa-trash-can"></i>Delete
-                        </button>
+                        </a>
+                        <a type="button" href="{{route('student.delete',$data->id)}}" class="btn btn-danger"> Delete
+                        </a>
                     </td>
                 </tr>
 
@@ -81,7 +77,7 @@
                         <input type="text" class="form-control" id="student_address" name="student_address"
                             placeholder="Enter your address">
                     </div>
-                    
+
 
 
 
