@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\api\apiStudentController;
-use App\Http\Controllers\api\studentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\api\studentController;
+use App\Http\Controllers\api\apiStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,18 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+
+});
+
+Route::group(['middleware' => ['jwt.verify']], function() {
+    
 Route::post('/student/store',[apiStudentController::class,'studentStore'])->name('student.create');
 Route::get('/student/view',[apiStudentController::class,'studentShow'])->name('student.view');
 Route::delete('/student/delete/{id}',[apiStudentController::class,'studentDelete'])->name('student.delete');
+});
